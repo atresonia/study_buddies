@@ -10,6 +10,7 @@ import 'package:study_buddies/services/auth.dart';
 import '../main.dart';
 
 //import 'home_page.dart';
+import 'courses_page.dart';
 import 'login_signup_page.dart';
 
 class RootPage extends StatefulWidget {
@@ -58,7 +59,7 @@ class RootPageState extends State<RootPage> {
 
       case AuthStatus.NOT_LOGGED_IN:
         return new LoginSignupPage(auth: widget.auth, loginCallback: loginCallback);
-       /*
+
       case AuthStatus.LOGGED_IN:
         // Check if the user has selected courses
         if (numCoursesSelected == -1) {
@@ -70,13 +71,13 @@ class RootPageState extends State<RootPage> {
           print("User ${user.email} has no courses selected");
           return new CoursesPage(auth: widget.auth, user: user);
         } else {
-          return new HomePage(auth: widget.auth, user: user);
+          //return new HomePage(auth: widget.auth, user: user);
         }
         break;
 
       default:
         return new LoginSignupPage(auth: widget.auth, loginCallback: loginCallback);
-    */}
+    }
   }
 
   Future<bool> isLoggedIn() async {
